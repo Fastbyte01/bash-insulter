@@ -3,7 +3,7 @@ print_message () {
     local selection
 
     messages=(
-        "Boooo!"
+        "Boooo! Fai proprio schifo"
         "Ma non capisci proprio niente?"
         "RTFM!"
         "Haha, pollo!"
