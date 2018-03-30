@@ -1,6 +1,6 @@
 print_message () {
     local messages
-    local selection
+    local message
 
     messages=(
         "Boooo! Fai proprio schifo"
@@ -76,18 +76,20 @@ print_message () {
         "Lascia stare che non è giornata"
     )
 
-    # If CMD_NOT_FOUND_MSGS array is populated use those messages instead of the defaults
+   # If CMD_NOT_FOUND_MSGS array is populated use those messages instead of the defaults
     [[ -n ${CMD_NOT_FOUND_MSGS} ]] && messages=( "${CMD_NOT_FOUND_MSGS[@]}" )
 
     # If CMD_NOT_FOUND_MSGS_APPEND array is populated append those to the existing messages
     [[ -n ${CMD_NOT_FOUND_MSGS_APPEND} ]] && messages+=( "${CMD_NOT_FOUND_MSGS_APPEND[@]}" )
 
-    # Only print the message some of the time. RANDOM must be seeded to ensure it returns
-    # different values on each iteration.
-    RANDOM=$(date +"%N")
-    selection=$((${RANDOM}%2))
-    if [[ ${selection} -lt 1 ]]; then
-        printf "\n  $(tput bold)$(tput setaf 1)$(shuf -n 1 -e "${messages[@]}")$(tput sgr0)\n\n"
+    # Seed RANDOM with an integer of some length
+    RANDOM=$(od -vAn -N4 -tu < /dev/urandom)
+
+    # Print a randomly selected message, but only about half the time to annoy the user a
+    # little bit less.
+    if [[ $((${RANDOM} % 2)) -lt 1 ]]; then
+        message=${messages[${RANDOM} % ${#messages[@]}]}
+        printf "\n  $(tput bold)$(tput setaf 1)${message}$(tput sgr0)\n\n"
     fi
 }
 
