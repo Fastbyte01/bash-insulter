@@ -74,6 +74,9 @@ print_message () {
         "Chi ti capisce è bravo!"
         "E da quando sei in grado di aprire il terminale?"
         "Lascia stare che non è giornata"
+        "Guardare Mr. Robot non ti rende un hacker"
+        "Ma sei ceco o stai solo premendo tasti a caso"
+        "Io penso... tu... ah, scusa tu non pensi"
     )
 
    # If CMD_NOT_FOUND_MSGS array is populated use those messages instead of the defaults
