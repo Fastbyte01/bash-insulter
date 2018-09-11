@@ -1,4 +1,7 @@
 # Ti insulto
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/99fe9378af2e4194ab098e2c154b2ae7)](https://app.codacy.com/app/rogepix/ti-insulto?utm_source=github.com&utm_medium=referral&utm_content=Fastbyte01/ti-insulto&utm_campaign=Badge_Grade_Dashboard)
+
 Insulta l'utente quando scrive comandi sbagliati.
 
 Cambia gli insulti come preferisci :)
