@@ -1,3 +1,4 @@
+#!/bin/bash
 print_message () {
     local messages
     local message
